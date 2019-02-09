@@ -24,12 +24,11 @@ if (grade > 93 && grade <= 100) {
   console.log("You must enter a number between 0 - 100.")
 }
 
-//Alex suggested simplifying the code.  I came up with the following.  *1 problem* is if a student gets above 100 (gets all questions correct plus extra credit).
-//This code gives students a 'B'.  Grade does not fall in the 93 - 100 range and is greater than 80.
+//Alex suggested simplifying the code.  I came up with the following.
 
 
 let grade = 95;
-if (grade > 93 && grade <= 100) {
+if (grade > 93) {
   console.log("You received an A! Excellent work! Congratulations on passing the assignment!");
 } else if (grade >= 80) {
   console.log("You received a B! Nice job! Congratulations on passing the assignment!");
@@ -149,8 +148,12 @@ for (i = 0; i < mySampleArray.length; i++) {
 // Samples to use://let mySampleString = "cat"; let mySampleArray = [1, 2, "cat", "dog"]
 
 //you can nest for loops inside of each other.  2 for loops nested (nested for loops).
-
+//link explaining nested for loops: https://stackoverflow.com/questions/36413159/understanding-nested-for-loops-in-javascript
 let myArrayOfStrings = ["cat", "dog", "mouse", "moose", "artichoke"];
+for (i=0; i < myArrayOfStrings.length; i++) { //outer loop
+for (j=0; j < myArrayOfStrings[i].length; j++) { //inner loop
+console.log(myArrayOfStrings[i][j]);
+}}
 
 // Strings
 // ---------
