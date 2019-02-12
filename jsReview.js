@@ -162,14 +162,25 @@ console.log(myArrayOfStrings[i][j]);
 // ---------
 
 // Given an array of strings, use the .filter() method to create a new array that contains only strings that include the letter 'e'
+//link to stackoverflow explaining how to filter array by character https://stackoverflow.com/questions/35235794/filter-strings-in-array-based-on-content
 let myArrayOfStrings2 = ["eee", "ddd","cat", "dog", "mouse", "moose", "artichoke"];
+let eWords = myArrayOfStrings2.filter(eWord => eWord.includes("e"));
+console.log(eWords);
+
 // Use the reduce function to return a new array that adds up all items in your shopping cart
-// Then, use change your reducer callback to only add up items that are less than 10.
+
 let myShoppingCart = [12, 4, 5, 16, 8, 9, 98, 9];
+let totalCost = myShoppingCart.reduce((totalCost, item) => totalCost + item);
+console.log(totalCost);
+// Then, use change your reducer callback to only add up items that are less than 10.
+let under10 = myShoppingCart
+  .filter(item => item < 10)    //make sure to not have a semicolon here!
+  .reduce((under10, item) => under10 + item);
+console.log(under10);
 
 // DOM Manipulation
 // ---------
 
-// Learn how to user .addEventListener() - Create a set of <li> like in the Advanced DOM checkpoint,
+// Learn how to use .addEventListener() - Create a set of <li> like in the Advanced DOM checkpoint,
 // but instead of using onclick, use the function .addEventListener() to pass a callback when we register an event.
 // Use a different event than "click" - try "mouseenter" or "dblclick" or "keydown" - experiment!
