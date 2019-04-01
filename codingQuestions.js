@@ -3,9 +3,45 @@
 // Write a function that will accept 2 numbers and return the sum of the range between those two numbers
 // ex. 3, 7 --> 3 + 4 + 5 + 6 + 7 = 25, so the function would return 25
 
-// Write a function that counts up to a given number, prining each number. If the number is divisible by 3, instead print "fizz"
-// If the number is divisible by 5, instead print "buzz." 
+function sumAll(arr) {
+  var min = Math.min(arr[0], arr[1]);
+  var max = Math.max(arr[0], arr[1]);
+
+  var range = [];
+
+  for (var i = min; i <= max; i++) {
+    range.push(i)
+  }
+
+  return range.reduce(function(a, b) {
+    return a + b;
+});
+}
+
+console.log(sumAll([1, 4]));
+
+console.log(sumAll([3, 7]));
+
+
+// Write a function that counts up to a given number, printing each number. If the number is divisible by 3, instead print "fizz"
+// If the number is divisible by 5, instead print "buzz."
 // If the number is divisible by both 3 and 5, instead print "fizzbuzz".
+
+function fizzBuzz(num){
+  for (i = 1; i <= num; i++){
+    if(i % 3 === 0 && i % 5 === 0){
+      console.log("fizzbuzz");
+    } else if(i % 5 === 0) {
+      console.log("buzz");
+    } else if(i % 3 === 0) {
+      console.log("fizz");
+    } else {
+      console.log(i);
+    }
+}}
+
+fizzBuzz(15);
+
 
 // =================================================================================================================
 
@@ -13,8 +49,34 @@
 
 // Write a function that accepts a number and returns a boolean based on whether that number is even or odd (This is in Bloc already)
 
+function isItEven(num) {
+  if (num % 2 === 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+console.log(isItEven(10));
+
+console.log(isItEven(5));
+
 // Using the above function, write a function that accepts an array of numbers and returns a new array.
 // replace any even number in the original array with the string "even" and any odd number with the string "odd"
+
+let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+function oddOrEven(arr){
+  for(x = 1; x <= arr.length; x++){
+  if(isItEven(x) === true){
+    console.log("even");
+  } else {
+    console.log("odd");
+  }
+}}
+
+oddOrEven(numbers);
+
 
 // Write  a function that accepts a character (single string character, ex: "w") and returns a boolean based on whether that char
 // is a vowel or consonant.
