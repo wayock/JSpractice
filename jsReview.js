@@ -9,23 +9,24 @@
 // ie. 93-100 returns "A", 80-93 returns "B" etc.
 // make sure to think about handling incorrect input.
 
-let grade = 95;
+let grade = "96";
 
-if (x > 100){
-  return "Enter a number between 1-100."
-} else if (x >= 90){
-  return "A";
-} else if (x >= 80){
-  return "B";
-} else if (x >= 70){
-  return "C";
-} else if (x >= 60){
-  return "D";
+if (grade > 100){
+   console.log("Enter a number between 1-100.")
+} else if (grade >= 90){
+   console.log("A")
+} else if (grade >= 80){
+  console.log("B")
+} else if (grade >= 70){
+  console.log("C")
+} else if (grade >= 60){
+  console.log("D")
+} else if (grade >= 0){
+  console.log("F")
 } else {
-  return "F";
-}
+  console.log("Enter a number between 1-100.")
+} 
 
-console.log(grade);
 
 
 
