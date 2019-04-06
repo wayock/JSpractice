@@ -25,7 +25,7 @@ if (grade > 100){
   console.log("F")
 } else {
   console.log("Enter a number between 1-100.")
-} 
+}
 
 
 
@@ -43,33 +43,42 @@ if (grade > 100){
 // but otherwise would take a user to a signup page:
 
 
-true && true //
-false && true //
-1 == 1 && 2 == 1 //
-"test" === "test" //
-1 == 1 || 2 != 1 //
-true && 1 == 1 //
-false && 0 != 0 //
-true || 1 == 1 //
-"test" == "testing" //
-1 != 0 && 2 == 1 //
-"test" != "testing" //
-"test" == 1 //
-!(true && false) //
-!(1 == 1 && 0 != 1) //
-!(10 == 1 || 1000 == 1000) //
-!(1 != 10 || 3 == 4) //
-!("testing" == "testing" && "Zed" == "Cool Guy") //
-1 == 1 && (!("testing" == 1 || 1 == 0)) //
-"chunky" == "bacon" && (!(3 == 4 || 3 == 3)) //
-3 == 3 && (!("testing" == "testing" || "Ruby" == "Fun")) //
+
+true && true // true
+false && true // false
+1 == 1 && 2 == 1 // false
+"test" === "test" // true
+1 == 1 || 2 != 1 // true
+true && 1 == 1 // true
+false && 0 != 0 // true???
+true || 1 == 1 // true
+"test" == "testing" // false
+1 != 0 && 2 == 1 // false
+"test" != "testing" // true
+"test" == 1 // false
+!(true && false) // true
+!(1 == 1 && 0 != 1) // false
+!(10 == 1 || 1000 == 1000) // false
+!(1 != 10 || 3 == 4) // false
+!("testing" == "testing" && "Zed" == "Cool Guy") // true
+1 == 1 && (!("testing" == 1 || 1 == 0)) // true
+"chunky" == "bacon" && (!(3 == 4 || 3 == 3)) // false
+3 == 3 && (!("testing" == "testing" || "Ruby" == "Fun")) // false
 
 
 // Arrays
 // ---------
 // #1a Define an array of pet names
+
+var petNames = ["Haroo", "Spot", "Lassie", "Lucky", "Chance", "Sofie", "Maxie"];
+
 // #1b write a conditional statement that logs "Too many pets" if your pet array contains more than 3 pets
 // or "this is fine; no problem here" if your pet array contains 3 or fewer pets
+
+if (petNames > ){
+
+}
+
 // #1c
 
 
@@ -77,18 +86,35 @@ true || 1 == 1 //
 // #2 How could we use arrays to represent something like a checkerboard?
 // Look up "multi dimensional arrays" and implement one to represent a checkerboard.
 
+var checkerboard = [
+  [0, 1, 2, 3, 4, 5, 6, 7, 8],
+  [0, 1, 2, 3, 4, 5, 6, 7, 8],
+  [0, 1, 2, 3, 4, 5, 6, 7, 8],
+  [0, 1, 2, 3, 4, 5, 6, 7, 8],
+  [0, 1, 2, 3, 4, 5, 6, 7, 8],
+  [0, 1, 2, 3, 4, 5, 6, 7, 8],
+  [0, 1, 2, 3, 4, 5, 6, 7, 8],
+  [0, 1, 2, 3, 4, 5, 6, 7, 8],
+];
 
-
+console.log(checkboard);
 
 
 // #3 Look up and use the following array methods: .pop(), .push()
+
+.pop() // removes last item or array.
+.push() // adds to the end of an array.
+
+let lastNum = checkerboard.push();
+
+console.log(lastNum);
 
 
 
 
 // #4 As above, look up and use the following array methods: .find(), .forEach() - Try this after the "Enumerable Functions" assignment
 
-
+var seven = checkerboard.find(10);
 
 
 
@@ -163,6 +189,115 @@ true || 1 == 1 //
 
 
 
+
+/* 1st Assessment:  **7 Functional Scope JS**
+Objectives:
+Interpret the use of function scope
+Interpret the use of calling a function
+Interpret the use of using function arguemnts
+You scored a 0.5 out of 1*/
+var function1 = function(x) {
+  return "happy " + function2(x);
+}
+
+var function2 = function(x) {
+  return "times " + x;
+}
+
+console.log(function1("Bloc"));    //output "happy times Bloc"
+
+
+
+
+/* 8 Two Scopes**
+Objectives:
+Undersand how to define methods
+Understand how to return a value from a method
+Understand how to pass arguments
+Apply conditional expressions and operators
+You scored a 1 out of 1*/
+
+function second(x) {
+  if (x > 5) {
+    x = 3
+  }
+  return first(x);
+}
+
+function first(n){
+  return n + 5;
+}
+
+console.log(second(2));  //outputs 7
+
+/* **9 Functional JavaScript Again**
+Objectives:
+Apply the each method to iterate over an array
+Understand the concept of iteration
+Demonstrate using a block as an argument
+You scored a 0 out of 0.5 */
+
+var x = 10;
+
+function combine(a, b){
+  return a + b + x;
+}
+
+var sum = combine(3, 5);
+
+console.log(combine(sum, x));  //output 38 because 18 + 10 + 10
+
+
+// Write a function that accepts 2 arguments, where both arguments are numbers and returns the sum of those two numbers.
+function sum(x, y){
+  return x + y;
+}
+sum(4, 5);
+
+
+/*Below, we have an array of movie objects
+// Using Javascript, loop through each object in the array
+// and console.log the movie title of each movie*/
+
+var bestMovies = [ {title: 'Star Wars'}, {title: 'Top Gun'}, {title: 'The Notebook'} ];
+
+for (let i = 0; i < bestMovies.length; i++ ){
+  console.log(bestMovies[i].title);
+}
+
+console.log(Object.keys(bestMovies[0]))
+
+// Write a function that takes 2 arguments - an array of numbers and a number
+// And returns true if the array contains the number and false otherwise
+// Example:
+// foo([2,4,7],7) would return true
+// foo([2,4,5],7) would return false
+
+function trueFalse(array, y){
+
+
+for (i = 0; i < array.length; i++){
+
+if (array[i] === y) {
+  return true;
+}
+}
+  return false;
+};
+
+
+console.log(trueFalse([2, 3, 4, 5, 6], 3));
+
+
+/*Write a function that takes a single array of numbers
+and returns a new array with each number being doubled in size.
+Example: doubleValues([1,2,3]) => returns [2,4,6]*/
+
+function double(x){
+  return x.map(double => double * 2);
+}
+
+console.log(double([2, 3, 4, 5]));
 
 // DOM Manipulation
 // ---------

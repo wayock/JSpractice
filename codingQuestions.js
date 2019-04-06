@@ -81,17 +81,38 @@ oddOrEven(numbers);
 // Write  a function that accepts a character (single string character, ex: "w") and returns a boolean based on whether that char
 // is a vowel or consonant.
 
+function isVowel(letter){
+const vowels = ['a', 'e', 'i', 'o', 'u'];
+for (let i = 0; i < vowels.length; i++){
+  if (letter === vowels[i]){
+    return true;
+  }
+}
+  return false;
+}
+
+console.log(isVowel("f"));
+
 // =================================================================================================================
 
 // Array Problems
 
 // Write a function that takes an array and reverses it (without the Array.reverse method)
+
+let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+for (i = numbers.length - 1; i >= 0; i--){
+  console.log(numbers[i]);
+}
 // Do this in place and returning a new array
 
 // Write a function that accepts an array of numbers and a single number and returns a new array of any numbers greater than the single number.
 
 // =================================================================================================================
 //Object Problems
+
+//Object.keys()
+//Object.values()
 
 // We need to sort a group of animals into two boxes
 // Below is an array of animal objects that are either soft or notSoft
@@ -106,6 +127,28 @@ let mixedUpAnimals = [
   {name: 'honey badger', soft: false},
   {name: 'mouse', soft: true}
 ];
+
+function animalNames(array)
+for (i = 0; i < array.length; i++){
+
+console.log(array[i].name);  //console.log - this only prints the name of each animal.
+
+}
+
+
+function animalNames(array)
+for (i = 0; i < array.length; i++){
+
+return array[i].name;  // return -  this only prints the name of each animal.
+
+}
+
+
+animalNames(mixedUpAnimals);
+
+
+animalNames(mixedUpAnimals);
+
 
 // You are a director of a local community theater and need to evaluate a series of scripts to see if your personnel can accomodate
 // the requirements. Write a function that will take in an array of scripts and return true or false based on whether your array of actors
@@ -133,4 +176,4 @@ function whatIsX(x) {
   return innerFunction(y);
 }
 
-whatIsX(10);
+whatIsX(10);  //outputs 40
